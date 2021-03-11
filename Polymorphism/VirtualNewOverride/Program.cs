@@ -57,11 +57,25 @@ namespace VirtualNewOverride
             Console.ReadKey();
         }
 
+        abstract class AbstractBaseClass
+        {
+            //public abstract void MustImplementThis()   !!! implicitly virtual
+            //A requirement - any derived calss must have this.
+
+            protected int _abstractNumber;  //protected : in between private and internal, can be accessed by all derived class
+            public void MethodA()
+            {
+
+            }
+        }
+
+
         /// <summary>
         /// A base class which implements 2 functions 
         /// </summary>
-        class BaseClass
+        class BaseClass : AbstractBaseClass     //default is internal
         {
+            
             #region 5 virtual 
             // step 5 - what effect does the virtual keyword have? 
             // the importance of new vs override in the derived class. 
